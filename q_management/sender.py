@@ -8,6 +8,6 @@ def start_queuing(data):
     channel.queue_declare(queue="hello")
 
     i = channel.basic_publish(exchange="", routing_key="hello", body=str(data))
-    print(" [x] Sent 'Hello World!'")
+    print("Sent Request")
     print(i)
     connection.close()
