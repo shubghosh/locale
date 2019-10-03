@@ -1,7 +1,7 @@
 import pika
 import json
 from pymongo import MongoClient
-from q_management import db_config as db
+import db_config as db
 
 conn = MongoClient()
 database = conn["locale"]
