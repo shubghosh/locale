@@ -1,0 +1,20 @@
+System at Architectural level
+    Steps
+        1- Activate virtual environment
+        2- Go to app folder and start the flask server
+        3- In new terminal window go to q_management folder and run receiver file
+            this will start the the rabbitmq listener
+        4- In new tab got to ops folder and run reader file, this will fetch records from shared dataset
+            and will make an API call to log request in rabbitmq and will get a response containing 
+            request id in form of md5.
+            Rabbitmq receiver file will fetch logged requests from queue and will insert them to mongoDB
+        5- To check the status of a record, run fetch.py file by passing the received md5 as command line argument.
+
+Assumptions:
+    In the fetch operation we made an assumption that the number of incoming requests will be manageable at runtime
+    without using a queue, the API fetches ride data directly from DB. If required this can be enhanced using
+    rabbitmq
+
+API Design:
+    open https://www.draw.io/ and then open xrides_api.drawio in this site by clicking on file 
+    and open from device

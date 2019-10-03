@@ -1,0 +1,8 @@
+application is working with python3
+packages needed to run the application
+run pip3 install package_name
+
+pika
+pymongo
+requests
+flask
